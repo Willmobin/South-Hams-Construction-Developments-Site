@@ -691,3 +691,146 @@ footer {
 .lightbox-open {
     overflow: hidden;
 }
+
+/* Mobile layout refinements */
+ (max-width: 620px) {
+    .container {
+        width: min(calc(100% - 24px), 560px);
+    }
+
+    .navbar {
+        display: block;
+        min-height: 0;
+        padding: 10px 0 12px;
+    }
+
+    .brand img {
+        width: 190px;
+    }
+
+    .nav-links {
+        width: calc(100vw - 24px);
+        margin-top: 10px;
+        gap: 4px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        flex: 0 0 auto;
+        padding: 8px 11px;
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+    }
+
+    .hero {
+        min-height: 0;
+    }
+
+    .hero-inner {
+        padding: 56px 0 64px;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(2.2rem, 11vw, 3.25rem);
+        line-height: 1.02;
+        margin-top: 16px;
+    }
+
+    .hero-copy p {
+        font-size: 0.98rem;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 18px;
+    }
+
+    .section {
+        padding: 48px 0;
+    }
+
+    .section-inner {
+        gap: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.85rem;
+    }
+
+    .services-grid,
+    .review-grid {
+        gap: 14px;
+    }
+
+    .service-card,
+    .review-card {
+        padding: 24px 18px 22px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-card {
+        padding: 18px 10px;
+        font-size: 0.88rem;
+    }
+
+    .stat-card strong {
+        font-size: 1.65rem;
+    }
+
+    .about-copy {
+        padding: 26px 20px;
+    }
+
+    .about-copy h3,
+    .contact-copy h2 {
+        font-size: 1.85rem;
+    }
+
+    .contact {
+        border-radius: 16px;
+        padding: 26px 18px;
+    }
+
+    .contact-card {
+        padding: 18px 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-inner {
+        display: grid;
+        gap: 4px;
+        font-size: 0.82rem;
+    }
+
+    .lightbox {
+        padding: 16px;
+    }
+
+    .lightbox-image {
+        max-width: 96vw;
+        max-height: 78vh;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+    }
+}
