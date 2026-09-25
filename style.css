@@ -693,7 +693,7 @@ footer {
 }
 
 /* Mobile layout refinements */
- (max-width: 620px) {
+@media (max-width: 620px) {
     .container {
         width: min(calc(100% - 24px), 560px);
     }
@@ -832,5 +832,62 @@ footer {
     .lightbox-close {
         top: 12px;
         right: 12px;
+    }
+}
+
+/* Mobile card emphasis */
+@media (max-width: 620px) {
+    .service-card,
+    .review-card {
+        border: 1px solid rgba(13, 59, 115, 0.18);
+        border-left: 5px solid var(--brand-blue-mid);
+        border-radius: 10px;
+        box-shadow: 0 10px 22px rgba(8, 44, 75, 0.12);
+    }
+
+    .service-card::before {
+        height: 3px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p,
+    .review-card p {
+        font-size: 0.94rem;
+        line-height: 1.6;
+    }
+
+    .review-card {
+        background: #ffffff;
+    }
+
+    .review-stars {
+        margin-bottom: 8px;
+    }
+
+    .stat-card {
+        min-height: 104px;
+        display: grid;
+        align-content: center;
+        border-radius: 10px;
+        border: 1px solid rgba(217, 237, 255, 0.32);
+        box-shadow: 0 10px 22px rgba(8, 44, 75, 0.16);
+    }
+
+    .about-wrap {
+        border: 1px solid rgba(13, 59, 115, 0.16);
+        box-shadow: 0 12px 26px rgba(8, 44, 75, 0.12);
+    }
+
+    .contact {
+        border: 1px solid rgba(217, 237, 255, 0.28);
+        box-shadow: 0 14px 30px rgba(8, 44, 75, 0.2);
+    }
+
+    .contact-card {
+        border-left: 4px solid var(--brand-gold-soft);
+        background: rgba(0, 0, 0, 0.2);
     }
 }
