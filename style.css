@@ -74,7 +74,7 @@ img {
 }
 
 .brand img {
-    width: clamp(180px, 22vw, 260px);
+    width: clamp(230px, 26vw, 340px);
     height: auto;
     object-fit: contain;
     border-radius: 0;
@@ -705,7 +705,7 @@ footer {
     }
 
     .brand img {
-        width: 190px;
+        width: 245px;
     }
 
     .nav-links {
