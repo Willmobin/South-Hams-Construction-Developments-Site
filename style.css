@@ -49,9 +49,9 @@ img {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: #000000;
-    border-bottom: none;
-    box-shadow: none;
+    background: var(--white);
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .navbar {
@@ -69,13 +69,14 @@ img {
     font-weight: 800;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text);
     font-size: 0.8rem;
 }
 
 .brand img {
-    width: clamp(230px, 26vw, 340px);
-    height: auto;
+    width: auto;
+    height: 130px;
+    max-width: 100%;
     object-fit: contain;
     border-radius: 0;
     background: transparent;
@@ -99,7 +100,7 @@ img {
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: var(--white);
+    color: var(--text);
     text-transform: uppercase;
     transition: all 0.2s ease;
 }
@@ -107,7 +108,7 @@ img {
 .nav-links a:hover,
 .nav-links a.active {
     background: transparent;
-    color: var(--brand-gold-soft);
+    color: var(--brand-blue);
     box-shadow: none;
 }
 
@@ -705,21 +706,16 @@ footer {
     }
 
     .brand img {
-        width: 245px;
+        width: auto;
+        height: 110px;
     }
 
     .nav-links {
-        width: calc(100vw - 24px);
+        width: 100%;
         margin-top: 10px;
         gap: 4px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
-        display: none;
+        flex-wrap: wrap;
+        overflow: visible;
     }
 
     .nav-links a {
