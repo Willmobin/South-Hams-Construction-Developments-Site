@@ -87,6 +87,18 @@ img {
     filter: none;
 }
 
+.phone-link {
+    color: var(--brand-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.phone-link:hover {
+    color: var(--brand-blue-deep);
+    text-decoration: underline;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -114,7 +126,7 @@ img {
 
 .hero {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(13, 59, 115, 0.82)),
-        url('Photos/unnamed1.jpg') center/cover no-repeat;
+        url('Photos/unnamed.jpg') center/cover no-repeat;
     min-height: 620px;
     display: flex;
     align-items: center;
@@ -572,6 +584,18 @@ footer {
 }
 
 @media (max-width: 980px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
     .hero-inner,
     .about-grid,
     .contact-grid,
@@ -708,6 +732,11 @@ footer {
     .brand img {
         width: auto;
         height: 110px;
+    }
+
+    .phone-link {
+        display: inline-flex;
+        margin-top: 8px;
     }
 
     .nav-links {
