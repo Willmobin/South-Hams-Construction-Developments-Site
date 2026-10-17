@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="Photos/Logo.jpg" type="image/jpg">
+        <link rel="icon" href="favicon.png" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="Photos/site-logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>South Hams Construction &amp; Developments</title>
         <meta name="description" content="South Hams Construction &amp; Developments delivers multi-trade building, renovation and outdoor work across the South Hams." />
@@ -12,17 +13,19 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="South Hams Construction and Developments" />
         <meta property="og:description" content="Multi-trade building, renovation and outdoor work across the South Hams." />
-        <meta property="og:image" content="Photos/Logo5-transparent.png" />
+        <meta property="og:image" content="https://shcd.co.uk/Photos/site-logo.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="South Hams Construction and Developments" />
         <meta name="twitter:description" content="Multi-trade building, renovation and outdoor work across the South Hams." />
+        <meta name="twitter:image" content="https://shcd.co.uk/Photos/site-logo.png" />
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "South Hams Construction and Developments",
             "description": "Multi-trade building, renovation and outdoor work across the South Hams.",
-            "image": "Photos/Logo5-transparent.png",
+            "image": "https://shcd.co.uk/Photos/NavBar.png",
+            "logo": "https://shcd.co.uk/Photos/site-logo.png",
             "email": "info@shcd.co.uk",
             "areaServed": {
                 "@type": "AdministrativeArea",
@@ -37,18 +40,30 @@
         <header class="topbar">
             <div class="container navbar">
                 <a href="#home" class="brand" aria-label="South Hams Construction &amp; Developments home">
-                    <img src="logo10.png" alt="South Hams Construction &amp; Developments logo" />
+                    <img src="Photos/Logo5-transparent.png" alt="South Hams Construction &amp; Developments logo" />
                 </a>
 
-                <a class="phone-link" href="tel:07947793704">07947 793704</a>
+                <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false">
+                    <span>Menu</span>
+                    <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
 
-                <nav class="nav-links" aria-label="Main navigation">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#work">Work</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
+                <nav class="nav-menu" id="main-navigation" aria-label="Main navigation">
+                    <div class="nav-links">
+                        <a class="active" href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#work">Work</a>
+                        <a href="#reviews">Reviews</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="nav-actions">
+                        <a class="phone-link" href="tel:07947793704">
+                            <span class="phone-prompt">Call for a free quote</span>
+                            <span>07947 793704</span>
+                        </a>
+                        <a class="nav-cta" href="#contact">Get a quote</a>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -170,6 +185,10 @@
                         <a class="gallery-item" href="Photos/unnamed21.jpg" rel="noopener" aria-label="Open full-size image: Building work"><img src="Photos/unnamed21.jpg" alt="Building work" /></a>
                         <a class="gallery-item" href="Photos/unnamed22.jpg" rel="noopener" aria-label="Open full-size image: Renovation work"><img src="Photos/unnamed22.jpg" alt="Renovation work" /></a>
                         <a class="gallery-item" href="Photos/unnamed23.jpg" rel="noopener" aria-label="Open full-size image: Outdoor improvement"><img src="Photos/unnamed23.jpg" alt="Outdoor improvement" /></a>
+                        <a class="gallery-item" href="Photos/unamed24.jpg" rel="noopener" aria-label="Open full-size image: Construction project"><img src="Photos/unamed24.jpg" alt="Construction project" loading="lazy" /></a>
+                        <a class="gallery-item" href="Photos/unnamed25.jpg" rel="noopener" aria-label="Open full-size image: Building project"><img src="Photos/unnamed25.jpg" alt="Building project" loading="lazy" /></a>
+                        <a class="gallery-item" href="Photos/unamed26.jpg" rel="noopener" aria-label="Open full-size image: Renovation project"><img src="Photos/unamed26.jpg" alt="Renovation project" loading="lazy" /></a>
+                        <a class="gallery-item" href="Photos/unamed27.jpg" rel="noopener" aria-label="Open full-size image: Outdoor improvement"><img src="Photos/unamed27.jpg" alt="Outdoor improvement" loading="lazy" /></a>
                     </div>
                 </div>
             </section>
@@ -276,7 +295,25 @@
             const lightbox = document.getElementById("lightbox");
             const lightboxImage = document.getElementById("lightbox-image");
             const lightboxClose = document.getElementById("lightbox-close");
+            const navToggle = document.querySelector(".nav-toggle");
+            const navMenu = document.getElementById("main-navigation");
             let lastFocusedGalleryItem;
+
+            function closeNavigation(returnFocus = false) {
+                navMenu.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+                if (returnFocus) navToggle.focus();
+            }
+
+            navToggle.addEventListener("click", () => {
+                const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+                navToggle.setAttribute("aria-expanded", String(!isOpen));
+                navMenu.classList.toggle("is-open", !isOpen);
+            });
+
+            navMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => closeNavigation());
+            });
 
             function closeLightbox() {
                 lightbox.hidden = true;
@@ -302,6 +339,13 @@
             });
             document.addEventListener("keydown", (event) => {
                 if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+                if (event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+                    closeNavigation(true);
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 1040) closeNavigation();
             });
         </script>
     </body>
