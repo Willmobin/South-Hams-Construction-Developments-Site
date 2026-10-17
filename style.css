@@ -978,9 +978,13 @@ footer {
     width: clamp(170px, 16vw, 320px);
     height: auto;
     max-width: 100%;
-    background: transparent;
-    filter: none;
+    background: transparent !important;
+    filter: none !important;
     object-fit: contain;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .nav-menu {
