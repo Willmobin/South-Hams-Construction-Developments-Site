@@ -17,3 +17,7 @@ Hosted using GitHub Pages with a custom domain.
 
 ## Purpose
 This project provided practical experience in web development, website design, and deployment using GitHub Pages.
+
+## License
+
+This project is licensed under the Apache License 2.0. See the LICENSE file for details.
