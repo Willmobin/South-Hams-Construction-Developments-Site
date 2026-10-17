@@ -975,10 +975,12 @@ footer {
 
 .brand img {
     display: block;
-    width: 240px;
+    width: clamp(170px, 16vw, 320px);
     height: auto;
-    max-width: 240px;
-    filter: brightness(0) saturate(100%) invert(14%) sepia(23%) saturate(4102%) hue-rotate(183deg) brightness(88%) contrast(104%);
+    max-width: 100%;
+    background: transparent;
+    filter: none;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -1146,7 +1148,7 @@ footer {
     }
 
     .brand img {
-        width: min(180px, 48vw);
+        width: min(120px, 34vw);
         max-width: none;
     }
 
